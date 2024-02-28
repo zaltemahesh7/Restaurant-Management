@@ -25,7 +25,7 @@ const ProjectRoutes = () => {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/orderonline" element={<Orderonline />} />
                     <Route path="/checkout" element={<Checkout />} />
-                    <Route path="/homepage" element={<Homepage />} />
+                    {/* <Route path="/homepage" element={<Homepage />} /> */}
                 </Routes>
             </Router>
         </React.Suspense>

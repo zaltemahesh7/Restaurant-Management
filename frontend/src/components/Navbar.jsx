@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
-  // const [selected, setSelected] = useState("");
-  // console.log(selected);
+  const [selected, setSelected] = useState("");
+  console.log(selected);
   return (
     <nav className='flex border justify-between border-gray-700 rounded-full p-7 text-xl'>
       <ul className='flex gap-3 '>
