@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 function Checkout() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>Checkout</div>
 
     </>

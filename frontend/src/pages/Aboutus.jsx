@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 function Aboutus() {
     return (
         <>
-            <Navbar/>
+            {/* <Navbar/> */}
             <div>Aboutus</div>
         </>
     )

@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 function Reservation() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>Reservation</div>
     </>
   )

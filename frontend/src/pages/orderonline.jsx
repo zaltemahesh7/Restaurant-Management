@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 function orderonline() {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     <div>orderonline</div>
     </>
   )

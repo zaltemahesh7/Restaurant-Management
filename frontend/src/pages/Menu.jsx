@@ -48,7 +48,7 @@ function Menu() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         <h1>List</h1>
         <div className=' flex gap-5 justify-center'>
@@ -61,7 +61,7 @@ function Menu() {
                 color="red_400"
                 size="sm"
                 variant="fill"
-                onClick={() => (navigate(i.route == i.route? i.route: ''))}
+                onClick={() => (setSelected(i.menu))}
               >
                 {/* <Link to="/dinner">{i.menu}</Link> */}
                 <Link to='/menu' className=' bg-transparent'>{i.menu}</Link>

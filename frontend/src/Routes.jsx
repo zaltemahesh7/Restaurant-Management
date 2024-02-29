@@ -13,10 +13,11 @@ const Aboutus = React.lazy(() => import("./pages/Aboutus"));
 const Menu = React.lazy(() => import("./pages/Menu"));
 const ProjectRoutes = () => {
     return (
-        <React.Suspense fallback={<Animation/>}>
+        <React.Suspense fallback={<Animation />}>
             <Router>
+                <Navbar />
                 <Routes>
-                    <Route path="/" element={<Navbar />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/Home" element={<Home />} />
                     <Route path="*" element={<NotFound />} />
                     <Route path="/menu" element={<Menu />} />
