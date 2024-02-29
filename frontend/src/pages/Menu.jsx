@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Menu() {
-  const [selected, setSelected] = useState('All Catagories')
+  const [selected, setSelected] = useState('All Catagories');
+  const navigate = useNavigate('');
 
   const populerMenu = [
     {
       id: 1,
       menu: "All Catagories",
+      route: '/allcatagoties',
     },
     {
       id: 2,
       menu: "Lunch",
+      route: '/allcatagoties',
     },
     {
       id: 3,
@@ -22,15 +25,18 @@ function Menu() {
           id: 1,
           name: "Pav Bhaji"
         }
-      ]
+      ],
+      route: '/Dinner',
     },
     {
       id: 4,
       menu: "Dessert",
+      route: '/Dessert',
     },
     {
       id: 5,
       menu: "Drink",
+      route: '/Drink',
     },
   ]
 
@@ -55,7 +61,7 @@ function Menu() {
                 color="red_400"
                 size="sm"
                 variant="fill"
-                onClick={() => (GoTo(i.menu))}
+                onClick={() => (navigate(i.route == i.route? i.route: ''))}
               >
                 {/* <Link to="/dinner">{i.menu}</Link> */}
                 <Link to='/menu' className=' bg-transparent'>{i.menu}</Link>
