@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Menu() {
@@ -175,7 +175,7 @@ function Menu() {
             <div className='flex flex-col items-center gap-3'>
               <h3 className='text-3xl text-center'>{menuItem.name}</h3>
               <p className=' text-center'>{menuItem.description}</p>
-              <p className=' text-2xl text-center'>Price: <span className='text-green-500'>${menuItem.price}</span></p>
+              <p className=' text-2xl text-center'>Price: <span className='text-green-500'>&#8377;{menuItem.price * 10}</span></p>
               <button className='hover:shadow-lg hover:shadow-green-500/50 rounded-md bg-green-600 text-center px-3.5 py-2.5 text-sm font-semibold text-gray-300 shadow-sm hover:bg-green-600 focus-visible:outline'>Add</button>
             </div>
           </div>
