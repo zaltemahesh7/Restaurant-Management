@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Menu() {
-  const [selected, setSelected] = useState('All Catagories');
+  const [selected, setSelected] = useState('All_Catagories');
   const navigate = useNavigate('');
 
   const menuItems = [
@@ -104,7 +104,7 @@ function Menu() {
   const populerMenu = [
     {
       id: 1,
-      menu: "All Catagories",
+      menu: "All_Catagories",
       route: '/allcatagoties',
     },
     {
@@ -144,14 +144,14 @@ function Menu() {
   return (
     <>
       {/* <Navbar /> */}
-      <div className='m-6'>
-        <h1>List</h1>
+      <div className='mt-28 '>
+        <h1 className='text-6xl font-bold'>Our Popular Menu</h1>
         <div className=' flex gap-5 justify-center'>
           {
             populerMenu.map((i) => (
               <div
                 key={i.id}
-                className={`cursor-pointer flex items-center justify-center overflow-hidden h-10 mt-8 p-6 rounded-2xl w-96 md:ml-[0] ml-[25px] text-center text-s ${selected == i.menu ? ' bg-[#f54748]' : ' bg-[#e9e5e5] '}`}
+                className={`cursor-pointer flex items-center justify-center overflow-hidden h-50 mt-8 p-6 rounded-2xl w-96 md:ml-[0] ml-[25px] text-center text-s ${selected == i.menu ? ' bg-[#f54748]' : ' bg-gray-200 '}`}
                 shape="round"
                 color="red_400"
                 size="sm"
@@ -167,15 +167,16 @@ function Menu() {
         </div>
         <h1 className=' m-6'>{populerMenu.map((i) => (i.menu == selected ? selected : ''))}</h1>
       </div>
+      
 
       <div className='flex gap-10 grid grid-cols-1 m-10 md:grid-cols-3 sm:grid-cols-2 '>
         {menuItems.map((menuItem) => (
-          <div key={menuItem.id} className='flex flex-col shadow-gray-500 shadow-md rounded-lg gap-4 items-center  hover:shadow-lg hover:shadow-gray-900 border-gray-500 hover:translate-y-[-10px] transition-all p-10'>
+          <div key={menuItem.id} className='flex flex-col bg-white  -z-0 rounded-lg gap-4 items-center p-10'>
             <img className=' rounded-lg h-60 w-full cursor-pointer ' src={menuItem.image} alt="--------" />
-            <div className='flex flex-col items-center gap-3'>
-              <h3 className='text-3xl text-center'>{menuItem.name}</h3>
-              <p className=' text-center'>{menuItem.description}</p>
-              <p className=' text-2xl text-center'>Price: <span className='text-green-500'>&#8377;{menuItem.price * 10}</span></p>
+            <div className='bg-white flex flex-col items-center gap-3'>
+              <h3 className='bg-white text-3xl text-center'>{menuItem.name}</h3>
+              <p className=' bg-white text-center'>{menuItem.description}</p>
+              <p className=' bg-white text-2xl text-center'>Price: <span className='text-green-500 bg-white'>&#8377;{menuItem.price * 10}</span></p>
               <button className='hover:shadow-lg hover:shadow-green-500/50 rounded-md bg-green-600 text-center px-3.5 py-2.5 text-sm font-semibold text-gray-300 shadow-sm hover:bg-green-600 focus-visible:outline'>Add</button>
             </div>
           </div>
@@ -186,3 +187,4 @@ function Menu() {
 }
 
 export default Menu
+
