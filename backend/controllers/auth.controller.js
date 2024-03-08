@@ -4,30 +4,30 @@ const bcrypt = require('bcryptjs')
 const login = async (req, res) => {
     try {
         const { username, password } = req.body;
-        console.log(username, password);
+        // console.log(username, password);
 
         // Check for Existing User.
         let userdb = await User.findOne({ username: username });
 
-        console.log(userdb.password);
+        // console.log(userdb.password);
         if (userdb) {
-            // const hashPass = await bcrypt.hash(password, 5)
-            // console.log(hashPass);
-            // const valid = await bcrypt.compare(password, userdb.password);
-            // console.log(valid);
-
-
             const isPasswordValid = await bcrypt.compare(password, userdb.password);
+            // console.log(isPasswordValid);
             if (!isPasswordValid) {
-                return res.status(401).json({ message: 'Invalid username or password' });
+                console.log('Not Exist');
+                return res.status(401).json({ message: 'Invalid username or password 18' });
             }
 
             console.log("Existing User");
             res.send({ msg: 'User Exist' })
+        } else {
+            console.log('Not Exist');
+            res.status(401).json({ message: 'Invalid username or password 25' });
         }
-        
+
         // res.send("Login controller through router");
     } catch (error) {
+        console.log(error);
         res.send(error);
     }
 }
@@ -53,7 +53,7 @@ const register = async (req, res) => {
 
             const user = await User.create({ username: username, email, phone, password, isAdmin })
             console.log({ Success: user });
-            res.send(user)
+            res.status(201).json({ msg: user, token: await user.generateToken(), userId: user._id.toString() })
         }
     } catch (error) {
         console.log(error);
