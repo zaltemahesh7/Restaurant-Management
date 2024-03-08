@@ -17,7 +17,7 @@ const login = async (req, res) => {
         }
         else {
             console.log("User Not Exist");
-            res.json({msg: 'User Not Exist'});
+            res.json({msg: 'User Not Exist'}); 
         }
 
         // res.send("Login controller through router");
