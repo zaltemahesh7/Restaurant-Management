@@ -11,15 +11,15 @@ const login = async (req, res) => {
 
         // console.log(userdb.password);
         if (userdb) {
-            const isPasswordValid = await bcrypt.compare(password, userdb.password);
+            const isPasswordValid = await userdb.comparePassword(password)
             // console.log(isPasswordValid);
             if (!isPasswordValid) {
                 console.log('Not Exist');
                 return res.status(401).json({ message: 'Invalid username or password 18' });
             }
 
-            console.log("Existing User");
-            res.send({ msg: 'User Exist' })
+            console.log("Login Successfull");
+            res.send({ msg: 'Login Successfull', token: await userdb.generateToken(), userid: userdb._id.toString() })
         } else {
             console.log('Not Exist');
             res.status(401).json({ message: 'Invalid username or password 25' });

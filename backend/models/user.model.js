@@ -30,8 +30,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
-// Encrypt Password
-
+// Encrypt Password using bcryptjs.
 userSchema.pre('save', async function (next) {
     const user = this;
     if (!user.isModified('password')) {
@@ -48,6 +47,7 @@ userSchema.pre('save', async function (next) {
     }
 });
 
+// Token Generation
 userSchema.methods.generateToken = async function () {
     try {
         return jwt.sign({
@@ -55,7 +55,7 @@ userSchema.methods.generateToken = async function () {
             email: this.email,
             isAdmin: this.isAdmin
         },
-        process.env.JWT_TOKEN, {
+            process.env.JWT_TOKEN, {
             expiresIn: '30d'
         }
         )
@@ -63,6 +63,11 @@ userSchema.methods.generateToken = async function () {
         console.error(error);
     }
 };
+
+// Compare Password
+userSchema.methods.comparePassword = async function (pass) {
+    return bcrypt.compare(pass, this.password)
+}
 
 // Create User model
 const User = mongoose.model('User', userSchema);
