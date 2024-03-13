@@ -4,8 +4,8 @@ const validation = async function (req, res, next) {
     try {
         // password validation
         const { password } = req.body;
-        console.log("Password validation success ");
-        if(password.length < 3) res.send("password is short")
+        console.log("Password validation");
+        if(password.length < 3) res.status(403).json({msg: "password is short"})
         else next()
     } catch (error) {
         console.log(error, "varification");
