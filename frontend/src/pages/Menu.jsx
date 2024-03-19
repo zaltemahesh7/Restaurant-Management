@@ -169,9 +169,9 @@ function Menu() {
       </div>
       
 
-      <div className='flex gap-10 grid grid-cols-1 m-10 md:grid-cols-3 sm:grid-cols-2 '>
+      <div className='gap-10 grid grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2 '>
         {menuItems.map((menuItem) => (
-          <div key={menuItem.id} className='flex flex-col bg-white  -z-0 rounded-lg gap-4 items-center p-10'>
+          <div key={menuItem.id} className='flex flex-col bg-white w-96 -z-0 rounded-2xl gap-4 items-center p-10'>
             <img className=' rounded-lg h-60 w-full cursor-pointer ' src={menuItem.image} alt="--------" />
             <div className='bg-white flex flex-col items-center gap-3'>
               <h3 className='bg-white text-3xl text-center'>{menuItem.name}</h3>

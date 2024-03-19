@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Navbar from "./components/Navbar";
 import Animation from "./components/Animation.jsx";
+import Footer from "./components/Footer.jsx";
 const Homepage = React.lazy(() => import("./pages/Homepage"));
 const Checkout = React.lazy(() => import("./pages/Checkout"));
 const Orderonline = React.lazy(() => import("./pages/orderonline"));
@@ -29,6 +30,7 @@ const ProjectRoutes = () => {
                     <Route path="/menu/dessert" element={<h1>Dessert</h1>} />
                 </Routes>
             </Router>
+            <Footer />
         </React.Suspense>
     );
 };

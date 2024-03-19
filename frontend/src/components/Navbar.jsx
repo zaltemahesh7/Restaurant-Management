@@ -5,7 +5,7 @@ function Navbar() {
   const [selected, setSelected] = useState("");
   console.log(selected);
   return (
-    <nav className='flex z-10 rounded-full z-1 justify-between p-7 text-xl'>
+    <nav className='flex z-10 z-1 justify-between p-4 overflow-hidden border border-gray-500 rounded-md sticky top-5 my-3'>
       <ul className='flex gap-8 '>
         <li className='hover:text-red-500 hover:underline translate-x-2'>
           <Link to='/Home' className='' onClick={() =>( setSelected('Home') )}>Home</Link>
