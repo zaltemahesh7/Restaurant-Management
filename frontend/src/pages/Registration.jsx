@@ -23,31 +23,31 @@ function Registration() {
         console.log('Success...', user.username);
 
         // Make fields empty
-        setUser({username: '', phone: '', email: '', password: ''})
+        setUser({ username: '', phone: '', email: '', password: '' })
     }
 
     return (
         <>
-            <section className='mt-9'>
-                <main>
-                    <div className="section-registration">
-                        <div className="container grid grid-cols-1 md:grid-cols-2 md:gap-4">
-                            <div className="registration-image">
-                                <img src="/images/img_rectangle150.png" width='500' height='700' alt="Registration Image" />
+            <section className='mt-9 bg-transparent' >
+                <main className='bg-transparent'>
+                    <div className="section-registration bg-transparent">
+                        <div className="container w-full text-center m-auto grid items-center bg-transparent" >
+                            <div className="registration-image bg-transparent">
+                                {/* <img src="/images/img_rectangle150.png" width='500' height='700' alt="Registration Image" /> */}
                             </div>
-                            <div className="registration-form">
-                                <h1 className='text-6xl my-9'>Registration</h1>
+                            <div className="registration-form bg-transparent">
+                                <h1 className='text-6xl my-9 bg-transparent'>Registration</h1>
                                 <br />
 
                                 {/* Registration form */}
 
-                                <form action="" method='post' onSubmit={getData} className='grid gap-3 justify-center md:gap-9 sm:gap-4'>
-                                    <div className='flex flex-col text-left text-xl'>
+                                <form action="" method='post' onSubmit={getData} className='grid gap-3 md:gap-9 sm:gap-4 bg-transparent'>
+                                    <div className='flex flex-col text-left text-xl bg-transparent text-white'>
                                         {/* <label htmlFor="username">UserName</label> */}
                                         <input
                                             type="text"
                                             placeholder='username'
-                                            className='border p-4 rounded'
+                                            className='border p-4 rounded bg-transparent'
                                             name='username'
                                             id='username'
                                             required
@@ -56,11 +56,11 @@ function Registration() {
                                             onChange={handleChange}
                                         />
                                     </div>
-                                    <div className='flex flex-col text-left text-xl'>
+                                    <div className='flex flex-col text-left text-xl bg-transparent'>
                                         {/* <label htmlFor="phone">phone</label> */}
                                         <input
                                             type="number"
-                                            className='border p-4 rounded'
+                                            className='border p-4 rounded bg-transparent'
                                             placeholder='Phone'
                                             name='phone'
                                             id='phone'
@@ -70,11 +70,11 @@ function Registration() {
                                             onChange={handleChange}
                                         />
                                     </div>
-                                    <div className='flex flex-col text-left text-xl w-96'>
+                                    <div className='flex flex-col text-left text-xl bg-transparent'>
                                         {/* <label htmlFor="email">email</label> */}
                                         <input
                                             type="email"
-                                            className='border p-4 rounded'
+                                            className='border p-4 rounded bg-transparent'
                                             placeholder='email'
                                             name='email'
                                             id='email'
@@ -84,11 +84,11 @@ function Registration() {
                                             onChange={handleChange}
                                         />
                                     </div>
-                                    <div className='flex flex-col text-left text-xl'>
+                                    <div className='flex flex-col text-left text-xl bg-transparent'>
                                         {/* <label htmlFor="password">password</label> */}
                                         <input
                                             type="password"
-                                            className='border p-4 rounded'
+                                            className='border p-4 rounded bg-transparent'
                                             placeholder='password'
                                             name='password'
                                             id='password'
@@ -99,10 +99,7 @@ function Registration() {
                                         />
                                     </div>
                                     <br />
-                                    <button
-                                        type='submit'
-                                        className=' bg-pink-500 p-4 rounded'
-                                    >Submit</button>
+                                    <button type='submit' className=' bg-pink-500 py-3 px-5 rounded m-auto' > Submit</button>
                                 </form>
                             </div>
                         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 // import Navbar from '../components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
 
+
 function Menu() {
   const [selected, setSelected] = useState('All_Catagories');
   const navigate = useNavigate('');
@@ -144,7 +145,7 @@ function Menu() {
   return (
     <>
       {/* <Navbar /> */}
-      <div className='mt-28 '>
+      <div className='mt-28 mx-5'>
         <h1 className='text-6xl font-bold'>Our Popular Menu</h1>
         <div className=' flex gap-5 justify-center'>
           {
@@ -169,7 +170,7 @@ function Menu() {
       </div>
       
 
-      <div className='gap-10 grid grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2 '>
+      <div className='gap-10 grid grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2 bg-image ' >
         {menuItems.map((menuItem) => (
           <div key={menuItem.id} className='flex flex-col bg-white w-96 -z-0 rounded-2xl gap-4 items-center p-10'>
             <img className=' rounded-lg h-60 w-full cursor-pointer ' src={menuItem.image} alt="--------" />

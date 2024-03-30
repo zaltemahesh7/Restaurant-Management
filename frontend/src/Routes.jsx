@@ -5,7 +5,6 @@ import NotFound from "./components/NotFound";
 import Navbar from "./components/Navbar";
 import Animation from "./components/Animation.jsx";
 import Footer from "./components/Footer.jsx";
-import Login from "./pages/Login.jsx";
 const Homepage = React.lazy(() => import("./pages/Homepage"));
 const Checkout = React.lazy(() => import("./pages/Checkout"));
 const Orderonline = React.lazy(() => import("./pages/orderonline"));
@@ -20,19 +19,18 @@ const ProjectRoutes = () => {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/Home" element={<Home />} />
                     <Route path="*" element={<NotFound />} />
+                    <Route path="/Home" element={<Home />} />
                     <Route path="/menu" element={<Menu />} />
                     <Route path="/aboutus" element={<Aboutus />} />
                     <Route path="/reservation" element={<Reservation />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/orderonline" element={<Orderonline />} />
                     <Route path="/checkout" element={<Checkout />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/menu/dessert" element={<h1>Dessert</h1>} />
+                    {/* <Route path="/menu/dessert" element={<Dessert />} /> */}
                 </Routes>
             </Router>
-            {/* <Footer /> */}
+            <Footer />
         </React.Suspense>
     );
 };

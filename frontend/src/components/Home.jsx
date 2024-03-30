@@ -1,6 +1,6 @@
 import React from 'react'
 // import Navbar from './Navbar'
-import Animation from './Animation'
+// import Animation from './Animation'
 import Registration from '../pages/Registration'
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
     <>
       {/* <Navbar /> */}
       {/* <Animation /> */}
-      <Registration/>
+      <Registration />
     </>
   )
 }
