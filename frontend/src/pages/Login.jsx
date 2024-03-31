@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Home from '../components/Home';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,8 +28,10 @@ const Login = () => {
 
       const data = await response.json();
       console.log('Login successful:', data);
-      return (<Route path="/home" element={<Home />} />)
+      alert('Login success');
+      navigate('/menu')
       // Here you can handle successful login, e.g., redirect to dashboard
+
     } catch (error) {
       console.error('Login error:', error.message);
       setError('Invalid username or password');
