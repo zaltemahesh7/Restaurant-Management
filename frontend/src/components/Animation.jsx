@@ -11,11 +11,12 @@ function animation() {
         //     </section>
         // </>
 
-        <div class="sup_main">
-            <div class="main bg-white rounded-full">
-                <div className=' w-[90%] bg-white h-[90%]'></div>
-            </div>
-            <div class="in_main"></div>
+        <div class="main bg-transparent">
+
+                <span class="sup_main"></span>
+            {/* <div class="in_main">
+                <p>Lodding....</p>
+            </div> */}
         </div>
     )
 }

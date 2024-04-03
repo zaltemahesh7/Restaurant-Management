@@ -42,7 +42,7 @@ function Registration() {
                                 {/* Registration form */}
 
                                 <form action="" method='post' onSubmit={getData} className='grid gap-3 md:gap-9 sm:gap-4 bg-transparent'>
-                                    <div className='flex flex-col text-left text-xl bg-transparent text-white'>
+                                    <div className='flex flex-col text-left text-xl bg-transparent'>
                                         {/* <label htmlFor="username">UserName</label> */}
                                         <input
                                             type="text"

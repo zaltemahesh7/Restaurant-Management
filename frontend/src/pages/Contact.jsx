@@ -24,7 +24,7 @@ function Contact() {
 
   return (
     <>
-      <section className='m-20'>
+      <section className=' m-3 sm:m-20'>
         <div className='grid sm:grid-cols-2 gap-8 grid-cols-1'>
           <div className=' bg-transparent flex flex-col gap-4 items-center justify-center'>
             <h2 className='font-bold text-7xl text-center bg-transparent'>Contact Us</h2>

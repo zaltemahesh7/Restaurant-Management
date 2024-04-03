@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+// import Home from "./pages/Home";
 import NotFound from "./components/NotFound";
 import Navbar from "./components/Navbar";
 import Animation from "./components/Animation.jsx";
 import Footer from "./components/Footer.jsx";
-const Homepage = React.lazy(() => import("./pages/Homepage"));
+import Login from "./pages/Login.jsx";
+const Home = React.lazy(() => import("./pages/Home"));
 const Checkout = React.lazy(() => import("./pages/Checkout"));
 const Orderonline = React.lazy(() => import("./pages/orderonline"));
 const Contact = React.lazy(() => import("./pages/Contact"), 12);
@@ -20,7 +21,8 @@ const ProjectRoutes = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="*" element={<NotFound />} />
-                    <Route path="/Home" element={<Home />} />
+                    {/* <Route path="/Home" element={<Home />} /> */}
+                    <Route path="/login" element={<Login />} />
                     <Route path="/menu" element={<Menu />} />
                     <Route path="/aboutus" element={<Aboutus />} />
                     <Route path="/reservation" element={<Reservation />} />

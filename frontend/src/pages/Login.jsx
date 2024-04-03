@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
-import Home from '../components/Home';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -28,8 +26,8 @@ const Login = () => {
 
       const data = await response.json();
       console.log('Login successful:', data);
-      alert('Login success');
-      navigate('/menu')
+      // alert('Login success');
+      navigate('/')
       // Here you can handle successful login, e.g., redirect to dashboard
 
     } catch (error) {
