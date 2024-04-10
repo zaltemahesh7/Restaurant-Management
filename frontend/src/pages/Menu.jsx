@@ -170,14 +170,14 @@ function Menu() {
       </div>
       
 
-      <div className='gap-10 grid grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2 bg-image ' >
+      <div className='gap-10 grid grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2' >
         {menuItems.map((menuItem) => (
-          <div key={menuItem.id} className='flex flex-col bg-white w-96 -z-0 rounded-2xl gap-4 items-center p-10'>
+          <div key={menuItem.id} className='flex flex-col bg-gredi w-96 -z-0 rounded-2xl gap-4 items-center p-10'>
             <img className=' rounded-lg h-60 w-full cursor-pointer ' src={menuItem.image} alt="--------" />
-            <div className='bg-white flex flex-col items-center gap-3'>
-              <h3 className='bg-white text-3xl text-center'>{menuItem.name}</h3>
-              <p className=' bg-white text-center'>{menuItem.description}</p>
-              <p className=' bg-white text-2xl text-center'>Price: <span className='text-green-500 bg-white'>&#8377;{menuItem.price * 10}</span></p>
+            <div className='bg-transparent flex flex-col items-center gap-3'>
+              <h3 className='bg-transparent text-3xl text-center'>{menuItem.name}</h3>
+              <p className=' bg-transparent text-center'>{menuItem.description}</p>
+              <p className=' bg-transparent text-2xl text-center'>Price: <span className='text-green-500 bg-white'>&#8377;{menuItem.price * 10}</span></p>
               <button className='hover:shadow-lg hover:shadow-green-500/50 rounded-md bg-green-600 text-center px-3.5 py-2.5 text-sm font-semibold text-gray-300 shadow-sm hover:bg-green-600 focus-visible:outline'>Add</button>
             </div>
           </div>
