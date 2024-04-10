@@ -1,6 +1,7 @@
 #root {
   margin: 0;
   padding: 0;
+  background: linear-gradient(to bottom, rgba(170, 255, 170, 0.2), rgba(17, 46, 211, 0.1), rgba(255, 170, 198, 0.3));
   /* background-image: url(https://eatsy.bold-themes.com/cupcakes/wp-content/uploads/sites/3/2018/09/featured_image_shop.jpg); */
   /* background-repeat: no-repeat; */
 }

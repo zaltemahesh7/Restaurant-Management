@@ -20,10 +20,17 @@ function Registration() {
 
     const getData = (e) => {
         e.preventDefault()
-        console.log('Success...', user.username);
+        console.log('Success...', user);
 
         // Make fields empty
         setUser({ username: '', phone: '', email: '', password: '' })
+    }
+
+    try {
+        
+        
+    } catch (error) {
+        console.log('Error: ', error);
     }
 
     return (

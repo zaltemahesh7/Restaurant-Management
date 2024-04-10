@@ -9,7 +9,7 @@ import Login from "./pages/Login.jsx";
 const Home = React.lazy(() => import("./pages/Home"));
 const Checkout = React.lazy(() => import("./pages/Checkout"));
 const Orderonline = React.lazy(() => import("./pages/orderonline"));
-const Contact = React.lazy(() => import("./pages/Contact"), 12);
+const Contact = React.lazy(() => import("./pages/Contact"), 120);
 const Reservation = React.lazy(() => import("./pages/Reservation"));
 const Aboutus = React.lazy(() => import("./pages/Aboutus"));
 const Menu = React.lazy(() => import("./pages/Menu"));

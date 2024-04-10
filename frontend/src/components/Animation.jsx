@@ -11,9 +11,9 @@ function animation() {
         //     </section>
         // </>
 
-        <div class="main bg-transparent">
+        <div className="main bg-transparent">
 
-                <span class="sup_main"></span>
+                <span className="sup_main"></span>
             {/* <div class="in_main">
                 <p>Lodding....</p>
             </div> */}

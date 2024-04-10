@@ -35,6 +35,10 @@ function Navbar() {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" /></svg>
           </div>
         </div>
+
+        <div className='flex items-center justify-center '>
+          <button className='h-full bg-red-500 px-5'>Map</button>
+        </div>
       </div>
 
       {/* ======================================================================================== */}
@@ -84,22 +88,22 @@ function Navbar() {
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-transparent w-40`}>
           <ul className='flex flex-col mt-8 gap-1 bg-transparent'>
             <li className='hover:text-red-500 hover:underline bg-transparent'>
-              <Link className='bg-transparent' to='/menu'>Menu</Link>
+              <Link className='bg-transparent' onClick={toggleNavbar} to='/menu'>Menu</Link>
             </li>
             <li className='hover:text-red-500 hover:underline bg-transparent'>
-              <Link className='bg-transparent' to='/aboutus'>About Us</Link>
+              <Link className='bg-transparent' onClick={toggleNavbar} to='/aboutus'>About Us</Link>
             </li>
             <li className='hover:text-red-500 hover:underline bg-transparent'>
-              <Link className='bg-transparent' to='/reservation'>Reservation</Link>
+              <Link className='bg-transparent' onClick={toggleNavbar} to='/reservation'>Reservation</Link>
             </li>
             <li className='hover:text-red-500 hover:underline bg-transparent'>
-              <Link className='bg-transparent' to='/contact'>Contact Us</Link>
+              <Link className='bg-transparent' onClick={toggleNavbar} to='/contact'>Contact Us</Link>
             </li>
             <li className='hover:text-red-500 hover:underline bg-transparent'>
-              <Link className='bg-transparent' to='/orderonline'>Order Online</Link>
+              <Link className='bg-transparent' onClick={toggleNavbar} to='/orderonline'>Order Online</Link>
             </li>
             <li className='hover:text-red-500 hover:underline bg-transparent'>
-              <Link className='bg-transparent' to='/checkout'>Check Out</Link>
+              <Link className='bg-transparent' onClick={toggleNavbar} to='/checkout'>Check Out</Link>
             </li>
           </ul>
         </div>
