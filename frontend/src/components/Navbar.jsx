@@ -46,14 +46,14 @@ function Navbar() {
 
       {/* Main Navigation bar */}
 
-      <nav className='flex justify-between gap-3 z-10  p-4 overflow-hidden sticky top-0 bg-[#ffffff]'>
+      <nav className='flex justify-between gap-3 z-10  p- overflow-hidden sticky top-0 navbar'>
         <div className='flex justify-between bg-transparent w-full'>
           <div className='mr-4 bg-transparent'>
             <Link to='/' className=' bg-transparent ' onClick={() => (setSelected('Home'))}>
-              <img src={logo} className='bg-transparent' width='80px' />
+              <img src={logo} className='bg-transparent' width='230px' />
             </Link>
           </div>
-          <div className='md:flex hidden bg-transparent '>
+          <div className='md:flex hidden bg-transparent justify-center items-center '>
             <ul className='flex  gap-4 bg-transparent'>
               <li onClick={() => (setSelected('Menu'))} className={`hover:text-red-500 hover:underline bg-transparent ${selected == 'Menu' ? 'text-red-500' : ' '}`}>
                 <Link className='bg-transparent' to='/menu'>Menu</Link>
@@ -107,9 +107,8 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <Link className='bg-transparent' to='/login'>
-
-          <button className=' border px-2 py-0.5 rounded-md bg-red-400' onClick={() => setSelected('/login')}>login</button>
+        <Link className='bg-transparent m-auto' to='/login'>
+          <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>login</button>
         </Link>
       </nav>
     </>

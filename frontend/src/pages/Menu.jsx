@@ -146,13 +146,13 @@ function Menu() {
     <>
       {/* <Navbar /> */}
       <div className='mt-28 mx-5'>
-        <h1 className='text-6xl font-bold'>Our Popular Menu</h1>
-        <div className=' flex gap-5 justify-center'>
+        <h1 className='text-6xl font-bold '>Our Popular Menu</h1>
+        <div className=' md:flex md:gap-5 md:justify-center '>
           {
             populerMenu.map((i) => (
               <div
                 key={i.id}
-                className={`cursor-pointer flex items-center justify-center overflow-hidden h-50 mt-8 p-6 rounded-2xl w-96 md:ml-[0] ml-[25px] text-center text-s ${selected == i.menu ? ' bg-[#f54748]' : ' bg-gray-200 '}`}
+                className={`cursor-pointer md:flex items-center justify-center overflow-hidden hidden h-50 mt-8 p-6 rounded-2xl  md:w-96 sm:ml-[0] md:ml-[25px] text-center text-s ${selected == i.menu ? ' box-shadow bg-red-200' : ' box-shadow border border-red-200'}`}
                 shape="round"
                 color="red_400"
                 size="sm"
@@ -170,9 +170,9 @@ function Menu() {
       </div>
       
 
-      <div className='gap-10 grid grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2' >
+      <div className='gap-7 border grid md:justify-center grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2' >
         {menuItems.map((menuItem) => (
-          <div key={menuItem.id} className='flex flex-col bg-gredi w-96 -z-0 rounded-2xl gap-4 items-center p-10'>
+          <div key={menuItem.id} className='flex flex-col border md:w-96 bg-[#FFFFFF] -z-0 rounded-2xl gap-4 items-center p-10'>
             <img className=' rounded-lg h-60 w-full cursor-pointer ' src={menuItem.image} alt="--------" />
             <div className='bg-transparent flex flex-col items-center gap-3'>
               <h3 className='bg-transparent text-3xl text-center'>{menuItem.name}</h3>

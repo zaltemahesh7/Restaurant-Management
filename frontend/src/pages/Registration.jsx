@@ -1,3 +1,4 @@
+import { json } from 'express';
 import React, { useState } from 'react'
 
 function Registration() {
@@ -26,11 +27,20 @@ function Registration() {
         setUser({ username: '', phone: '', email: '', password: '' })
     }
 
-    try {
-        
-        
-    } catch (error) {
-        console.log('Error: ', error);
+    function handleSubmit(e) {
+        e.preventDefault();
+        try {
+            const responce = fetch('http://localhost:3000/register', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(user)
+            })
+
+        } catch (error) {
+            console.log('Error: ', error);
+        }
     }
 
     return (
@@ -106,7 +116,7 @@ function Registration() {
                                         />
                                     </div>
                                     <br />
-                                    <button type='submit' className=' bg-pink-500 py-3 px-5 rounded m-auto' > Submit</button>
+                                    <button type='submit' className=' bg-pink-500 py-3 px-5 rounded m-auto' onClick={handleSubmit} > Submit</button>
                                 </form>
                             </div>
                         </div>
