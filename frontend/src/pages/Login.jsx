@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Store/auth';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -7,6 +8,7 @@ const Login = () => {
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
+  const { StoreToken } = useAuth()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,15 +22,16 @@ const Login = () => {
         body: JSON.stringify({ username, password }),
       });
 
-      if (!response.ok) {
-        throw new Error('Invalid username or password');
-      }
+      if (response.ok) {
+        const data = await response.json();
 
-      const data = await response.json();
-      console.log('Login successful:', data);
-      alert('Login success');
-      navigate('/')
-      // Here you can handle successful login, e.g., redirect to dashboard
+        // Set Token in to local Storage.
+        StoreToken(data.token)
+        console.log('Login successful:', data.token);
+
+        // Here you can handle successful login, e.g., redirect to dashboard
+        navigate('/')
+      }
 
     } catch (error) {
       console.error('Login error:', error.message);

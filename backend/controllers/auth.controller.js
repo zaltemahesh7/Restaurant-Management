@@ -50,10 +50,11 @@ const register = async (req, res) => {
 
         // Creating New user.
         else {
-
             const user = await User.create({ username: username, email, phone, password, isAdmin })
             console.log({ Success: user });
-            res.status(201).json({ msg: user, token: await user.generateToken(), userId: user._id.toString() })
+
+            // Sendding Reseponce back to client.
+            res.status(201).json({ msg: 'Registration Successfull..', token: await user.generateToken(), userId: user._id.toString() })
         }
     } catch (error) {
         console.log(error);

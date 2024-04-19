@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Store/auth';
 
 function Registration() {
     const [username, setUsername] = useState('');
@@ -6,6 +8,10 @@ function Registration() {
     const [password, setPassword] = useState('');
     const [phone, setPhone] = useState('');
     const [error, setError] = useState('');
+
+    // To Redirect to the login Page for login.
+    const navigate = useNavigate();
+    const { StoreToken } = useAuth()
 
 
     const handleSubmit = async (e) => {
@@ -20,19 +26,23 @@ function Registration() {
                 body: JSON.stringify({ username, phone, email, password }),
             });
 
-            if (!response.ok) {
-                throw new Error('Invalid username or password');
+            if (response.ok) {
+                const data = await response.json();
+                // alert('Registration success');
+                if (data.msg !== 'User Exist') {
+                    console.log('Registration successful:', data);
+                    StoreToken(data.token)
+                    navigate('/Home')
+                }
+                else console.log({ msg: "Exist" });
+                // Here you can handle successful login, e.g., redirect to dashboard
             }
 
-            const data = await response.json();
-            console.log('Login successful:', data);
-            alert('Login success');
-            navigate('/')
-            // Here you can handle successful login, e.g., redirect to dashboard
 
         } catch (error) {
             console.error('Registration error:', error);
             setError('Invalid username or password');
+            throw new Error('Invalid username or password');
         }
     };
 
