@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '/LogoPlusText.svg';
+import { useAuth } from '../Store/auth';
 
 // const Navlink = useNavigate()
 
 function Navbar() {
   const [selected, setSelected] = useState("Home");
   const [isOpen, setIsOpen] = useState(false);
+  const { isLogin } = useAuth();
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-
 
   return (
     <>
@@ -107,9 +108,14 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <Link className='bg-transparent m-auto' to='/login'>
-          <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>login</button>
-        </Link>
+        {
+          isLogin ? <><NavLink className='bg-transparent m-auto' to='/logout'>
+            <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>Logout</button>
+          </NavLink></> : <><NavLink className='bg-transparent m-auto' to='/login'>
+            <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>login</button>
+          </NavLink></>
+        }
+
       </nav>
     </>
   );

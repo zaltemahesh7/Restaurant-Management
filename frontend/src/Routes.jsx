@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Animation from "./components/Animation.jsx";
 import Footer from "./components/Footer.jsx";
 import Login from "./pages/Login.jsx";
+import Logout from "./pages/Logout.jsx";
 const Home = React.lazy(() => import("./pages/Home"));
 const Checkout = React.lazy(() => import("./pages/Checkout"));
 const Orderonline = React.lazy(() => import("./pages/orderonline"));
@@ -23,6 +24,7 @@ const ProjectRoutes = () => {
                     <Route path="*" element={<NotFound />} />
                     {/* <Route path="/Home" element={<Home />} /> */}
                     <Route path="/login" element={<Login />} />
+                    <Route path="/logout" element={<Logout />} />
                     <Route path="/menu" element={<Menu />} />
                     <Route path="/aboutus" element={<Aboutus />} />
                     <Route path="/reservation" element={<Reservation />} />
