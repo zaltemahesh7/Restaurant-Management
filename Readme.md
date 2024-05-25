@@ -7,3 +7,9 @@ experience.
 The restaurant management application, named "Hotel Surbhi," aims to streamline
 restaurant operations and enhance customer experience by providing a comprehensive
 solution for both restaurant staff and customers. Developed using the MERN(MongoDB, Express.js, React.js, Node.js) Stack, Hotel Surbhi offers intuitive interfaces for managing orders, inventory, and reservations, while also providing customers with a user-friendlyplatform for browsing menus, placing orders, and providing feedback.
+
+
+# Steps To run Project
+
+
+## Setup for Backend - 

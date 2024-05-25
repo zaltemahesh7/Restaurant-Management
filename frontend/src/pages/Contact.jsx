@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { useAuth } from '../Store/auth';
+
+const defaultContactForm = {
+  name: '',
+  email: '',
+  message: ''
+}
 
 function Contact() {
-  const [messageField, setMessageField] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [messageField, setMessageField] = useState(defaultContactForm);
+  const {user} = useAuth();
+
+  // const {user} = useAuth();
 
   function handleChange(e) {
     let name = e.target.name;
@@ -16,10 +22,25 @@ function Contact() {
     })
   }
 
-  const getData = (e) => {
+  const getData = async (e) => {
     e.preventDefault()
     console.log(messageField);
-    setMessageField({ name: '', email: '', message: "" })
+
+    try {
+      const responce = await fetch('http://localhost:3000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(messageField),
+      });
+      console.log(responce);
+      if (responce.ok) setMessageField(defaultContactForm)
+    } catch (error) {
+      console.log(error);
+    }
+
+
   }
 
   return (

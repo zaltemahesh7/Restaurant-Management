@@ -70,4 +70,14 @@ const home = async (req, res) => {
     }
 }
 
-module.exports = { login, register, home };
+const user = async (req, res) => {
+    try {
+        const userData = req.user;
+        console.log("user", userData);
+        return res.send(userData)
+    } catch (error) {
+        res.status(400).send(error, 'dfghjgfd');
+    }
+}
+
+module.exports = { login, register, home, user };

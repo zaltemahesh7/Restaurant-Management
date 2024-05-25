@@ -8,11 +8,12 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
 
     const StoreToken = (serverToken) => {
+        setToken(serverToken);
         return localStorage.setItem('token', serverToken)
     }
 
     // Logout Functionality
-    
+
     let isLogin = !!token;
     const LogoutUser = () => {
         setToken('');

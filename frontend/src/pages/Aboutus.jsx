@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useAuth } from '../Store/auth';
 
 function Aboutus() {
+    const { user } = useAuth();
+    console.log(user);
     return (
         <>
             {/* <Navbar/> */}
-            <div className='grid gap-20 sm:m-11 max-sm:w-60 mx-auto my-9'>
-                <div className='grid sm:grid-cols-2 items-center max-sm:gap-4'>
+            <div className='grid text-2xl gap-20 sm:m-11 max-sm:w-60 mx-auto my-9'>
+                <div className='grid sm:grid-cols-2 md:gap-4 text-sm grid-cols-1 items-center max-sm:gap-4'>
                     <img src="https://cdn.pixabay.com/photo/2021/07/02/05/09/paneer-tikka-6380891_1280.jpg" width='500px' className='rounded-md' alt="Image1" />
-                    <p>Surbhi Pure Veg restaurant is an unassuming vegetarian restaurant, priding itself on serving everyday dal, rice, paneer dishes, and an array of curries. The restaurant offers various service options including kerbside pickup, no-contact delivery, delivery, drive-through, takeaway, and dine-in facilities.</p>
+                    <p> {user} Surbhi Pure Veg restaurant is an unassuming vegetarian restaurant, priding itself on serving everyday dal, rice, paneer dishes, and an array of curries. The restaurant offers various service options including kerbside pickup, no-contact delivery, delivery, drive-through, takeaway, and dine-in facilities.</p>
                 </div>
                 <div className='grid sm:grid-cols-2  items-center max-sm:gap-4'>
 
@@ -17,7 +20,7 @@ function Aboutus() {
 
                 <div className='grid sm:grid-cols-2 items-center max-sm:gap-4'>
 
-                <img src="https://cdn.pixabay.com/photo/2021/07/04/13/23/green-curry-6386360_640.jpg" width='500px' className='rounded-md' alt="Image1" />
+                    <img src="https://cdn.pixabay.com/photo/2021/07/04/13/23/green-curry-6386360_640.jpg" width='500px' className='rounded-md' alt="Image1" />
                     <p>The restaurant boasts amenities such as clean toilets, ensuring a comfortable dining experience. With a casual atmosphere welcoming to all, Hotel Surbhi Pure Veg is often frequented by groups seeking delicious vegetarian fare.</p>
                 </div>
 

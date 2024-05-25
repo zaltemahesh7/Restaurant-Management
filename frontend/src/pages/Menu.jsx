@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 
-function Menu() {
+function Menu({setC}) {
   const [selected, setSelected] = useState('All_Catagories');
   const navigate = useNavigate('');
 
@@ -142,9 +142,16 @@ function Menu() {
     return menu;
   }
 
+  const cartArray = []
+  function addToCart(item) {
+    if(cartArray.includes(item)) console.log('present');
+    else { cartArray.push(item);
+    setC.push(item);}
+    console.log(cartArray);
+  }
+
   return (
     <>
-      {/* <Navbar /> */}
       <div className='mt-28 mx-5'>
         <h1 className='text-6xl font-bold '>Our Popular Menu</h1>
         <div className=' md:flex md:gap-5 md:justify-center '>
@@ -164,7 +171,7 @@ function Menu() {
               </div>
             ))
           }
-          {/* <h1>{GoTo()}</h1> */}
+          {/* <h1>{GoTo}</h1>  */}
         </div>
         <h1 className=' m-6'>{populerMenu.map((i) => (i.menu == selected ? selected : ''))}</h1>
       </div>
@@ -178,7 +185,7 @@ function Menu() {
               <h3 className='bg-transparent text-3xl text-center'>{menuItem.name}</h3>
               <p className=' bg-transparent text-center'>{menuItem.description}</p>
               <p className=' bg-transparent text-2xl text-center'>Price: <span className='text-green-500 bg-white'>&#8377;{menuItem.price * 10}</span></p>
-              <button className='hover:shadow-lg hover:shadow-green-500/50 rounded-md bg-green-600 text-center px-3.5 py-2.5 text-sm font-semibold text-gray-300 shadow-sm hover:bg-green-600 focus-visible:outline'>Add</button>
+              <button className='hover:shadow-lg hover:shadow-green-500/50 rounded-md bg-green-600 text-center px-3.5 py-2.5 text-sm font-semibold text-gray-300 shadow-sm hover:bg-green-600 focus-visible:outline' onClick={() => {addToCart(menuItem.id)}}>Add</button>
             </div>
           </div>
         ))}

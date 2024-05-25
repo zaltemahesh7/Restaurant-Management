@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Auth, useAuth } from '../Store/auth';
+import { useAuth } from '../Store/auth';
 
 function Logout() {
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../Store/auth';
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch(`http://localhost:3000/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,6 +32,8 @@ const Login = () => {
         // Here you can handle successful login, e.g., redirect to dashboard
         navigate('/')
       }
+      else setError('Invalid username or password');
+       
 
     } catch (error) {
       console.error('Login error:', error.message);
@@ -80,6 +82,9 @@ const Login = () => {
         </form>
         <div className='bg-transparent'>
           <button onClick={handleForgotPassword}>Forgot Password?</button>
+        </div>
+        <div className='bg-transparent'>
+          <Link to='/register'>Create new account.</Link>
         </div>
       </div>
     </div>

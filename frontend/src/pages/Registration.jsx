@@ -32,7 +32,7 @@ function Registration() {
                 if (data.msg !== 'User Exist') {
                     console.log('Registration successful:', data);
                     StoreToken(data.token)
-                    navigate('/Home')
+                    navigate('/')
                 }
                 else console.log({ msg: "Exist" });
                 // Here you can handle successful login, e.g., redirect to dashboard
@@ -58,26 +58,26 @@ function Registration() {
             <div className='flex flex-col w-full'>
                 <form method='POST' onSubmit={handleSubmit} className='flex flex-col gap-4 w-full items-center justify-center'>
                     <label htmlFor="username">UserName</label>
-                    <input className='border' value={username}
-                        onChange={(e) => setUsername(e.target.value)} placeholder='Username' type="text" id='username' name='username' />
+                    <input className='border px-4 py-2 rounded m-0 w-96' value={username}
+                        onChange={(e) => setUsername(e.target.value)} placeholder='Username' type="text" id='username' name='username' required />
 
                     <label htmlFor="email">Email</label>
-                    <input className='border' placeholder='Email' value={email}
+                    <input className='border px-4 py-2 rounded m-0 w-96' placeholder='Email' value={email}
                         onChange={(e) => setEmail(e.target.value)} type="email" id='email' name='email' />
 
                     <label htmlFor="phone">Phone</label>
-                    <input className='border' placeholder='Phone' value={phone}
+                    <input className='border px-4 py-2 rounded m-0 w-96' placeholder='Phone' value={phone}
                         onChange={(e) => setPhone(e.target.value)} type="Number" name='phone' id='phone' />
 
                     <label htmlFor="password">Password</label>
-                    <input className='border' value={password}
+                    <input className='border px-4 py-2 rounded m-0 w-96' value={password}
                         onChange={(e) => setPassword(e.target.value)} placeholder='Password' type="password" name='password' id='password' />
 
-                    <button type="submit" className='box-shadow px-4 py-2 bg-red-200 rounded'>Submit</button>
+                    <button type="submit" className='box-shadow px-4 py-2 m-4 bg-red-200 rounded'>Submit</button>
                 </form>
             </div>
         </div>
     )
 }
 
-export default Registration
+export default Registration;

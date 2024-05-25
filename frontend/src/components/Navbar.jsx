@@ -7,7 +7,7 @@ import { useAuth } from '../Store/auth';
 
 function Navbar() {
   const [selected, setSelected] = useState("Home");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState();
   const { isLogin } = useAuth();
 
   const toggleNavbar = () => {
@@ -109,11 +109,15 @@ function Navbar() {
           </ul>
         </div>
         {
-          isLogin ? <><NavLink className='bg-transparent m-auto' to='/logout'>
-            <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>Logout</button>
-          </NavLink></> : <><NavLink className='bg-transparent m-auto' to='/login'>
-            <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>login</button>
-          </NavLink></>
+          isLogin ? <>
+            <NavLink className='bg-transparent m-auto' to='/logout'>
+              <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>Logout</button>
+            </NavLink>
+          </> : <>
+            <NavLink className='bg-transparent m-auto' to='/login'>
+              <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>login</button>
+            </NavLink>
+          </>
         }
 
       </nav>
