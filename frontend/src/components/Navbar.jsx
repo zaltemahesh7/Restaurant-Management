@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '/LogoPlusText.svg';
 import { useAuth } from '../Store/auth';
+import { FaRegCircleUser, FaRegUser } from "react-icons/fa6";
 
 // const Navlink = useNavigate()
 
@@ -47,7 +48,7 @@ function Navbar() {
 
       {/* Main Navigation bar */}
 
-      <nav className='flex justify-between gap-3 z-10  p- overflow-hidden sticky top-0 navbar'>
+      <nav className='flex justify-between gap-3 z-10 border rounded-lg m-3 p-2 overflow-hidden sticky top-0 navbar'>
         <div className='flex justify-between bg-transparent w-full'>
           <div className='mr-4 bg-transparent'>
             <Link to='/' className=' bg-transparent ' onClick={() => (setSelected('Home'))}>
@@ -110,8 +111,9 @@ function Navbar() {
         </div>
         {
           isLogin ? <>
-            <NavLink className='bg-transparent m-auto' to='/logout'>
-              <button className=' border px-2 py-0.5 rounded-md bg-red-400 ' onClick={() => setSelected('/login')}>Logout</button>
+            <NavLink className='bg-transparent my-auto mr-5' to='/profile'>
+              {/* <FaRegCircleUser size={25} /> */}
+              <FaRegUser size={25} />
             </NavLink>
           </> : <>
             <NavLink className='bg-transparent m-auto' to='/login'>

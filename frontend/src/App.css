@@ -1,23 +1,50 @@
-#root {
-  margin: 0;
-  padding: 0;
-  /* background: linear-gradient(to bottom, rgba(170, 255, 170, 0.9), rgba(255, 255, 255, 1), rgba(255, 170, 198, 0.3)); */
-  backdrop-filter: blur(20px);
-  background: #f7f4e9;
-  /* background-image: url(https://eatsy.bold-themes.com/cupcakes/wp-content/uploads/sites/3/2018/09/featured_image_shop.jpg); */
-  /* background-repeat: no-repeat; */
+.music-player {
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.navbar {
-  /* background: #FFFFFF; */
-  backdrop-filter: blur(2px);
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* background: var(--chakra-colors-InvactWhite); */
-
-.box-shadow {
-
-  box-shadow: 9.06076px 15.0796px 35.1848px rgba(49, 13, 2, 0.3835), inset -3.64444px -6.06536px 7.07605px rgb(255, 255, 255), inset 3.64444px 6.06536px 7.07605px rgb(255, 255, 255);
+.song-item {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 150px;
 }
 
-/* box-shadow: 9.06076px 15.0796px 35.1848px rgba(49, 13, 2, 0.3835), inset -3.64444px -6.06536px 7.07605px #AA2D08, inset 3.64444px 6.06536px 7.07605px #FF510E; */
+.song-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.song-item h3 {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.song-item button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.song-item button:hover {
+  background-color: #45a049;
+}
+
+.current-song {
+  margin-top: 20px;
+}
+
+.current-song h2 {
+  font-size: 18px;
+}

@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 // import Navbar from '../components/Navbar'
 import { Link, useNavigate } from 'react-router-dom'
+import AllMenus from './menus/AllMenus';
+import Dessert from './menus/Dessert';
+import Drink from './menus/Drink';
+import Lunch from './menus/Lunch';
+import Dinner from './menus/Dinner';
 
 
-function Menu({setC}) {
+function Menu({ setC }) {
   const [selected, setSelected] = useState('All_Catagories');
-  const navigate = useNavigate('');
+  const navigate = useNavigate();
 
   const menuItems = [
     {
@@ -134,22 +139,33 @@ function Menu({setC}) {
       menu: "Drink",
       route: '/Drink',
     },
-  ]
+  ];
 
-  function GoTo(menu) {
-    // console.log(menu);
-    setSelected(menu)
-    return menu;
+ 
+
+  function GoTo() {
+    switch (selected) {
+      case 'All_Catagories':
+        return <AllMenus />;
+    
+      case 'Lunch':
+        return <Lunch />;
+    
+      case 'Dinner':
+        return <Dinner />;
+    
+      case 'Dessert':
+        return <Dessert />;
+    
+      case 'Drink':
+        return <Drink />;
+    
+      default:
+        break;
+    }
   }
 
-  const cartArray = []
-  function addToCart(item) {
-    if(cartArray.includes(item)) console.log('present');
-    else { cartArray.push(item);
-    setC.push(item);}
-    console.log(cartArray);
-  }
-
+  
   return (
     <>
       <div className='mt-28 mx-5'>
@@ -164,7 +180,7 @@ function Menu({setC}) {
                 color="red_400"
                 size="sm"
                 variant="fill"
-                onClick={() => (setSelected(i.menu))}
+                onClick={() => {setSelected(i.menu)}}
               >
                 {/* <Link to="/dinner">{i.menu}</Link> */}
                 <Link to='/menu' className=' bg-transparent'>{i.menu}</Link>
@@ -175,20 +191,10 @@ function Menu({setC}) {
         </div>
         <h1 className=' m-6'>{populerMenu.map((i) => (i.menu == selected ? selected : ''))}</h1>
       </div>
-      
 
-      <div className='gap-7 border grid md:justify-center grid-cols-1 mt-10 md:grid-cols-3 sm:grid-cols-2' >
-        {menuItems.map((menuItem) => (
-          <div key={menuItem.id} className='flex flex-col border md:w-96 bg-[#FFFFFF] -z-0 rounded-2xl gap-4 items-center p-10'>
-            <img className=' rounded-lg h-60 w-full cursor-pointer ' src={menuItem.image} alt="--------" />
-            <div className='bg-transparent flex flex-col items-center gap-3'>
-              <h3 className='bg-transparent text-3xl text-center'>{menuItem.name}</h3>
-              <p className=' bg-transparent text-center'>{menuItem.description}</p>
-              <p className=' bg-transparent text-2xl text-center'>Price: <span className='text-green-500 bg-white'>&#8377;{menuItem.price * 10}</span></p>
-              <button className='hover:shadow-lg hover:shadow-green-500/50 rounded-md bg-green-600 text-center px-3.5 py-2.5 text-sm font-semibold text-gray-300 shadow-sm hover:bg-green-600 focus-visible:outline' onClick={() => {addToCart(menuItem.id)}}>Add</button>
-            </div>
-          </div>
-        ))}
+
+      <div >
+      {GoTo()}
       </div>
     </>
   )
